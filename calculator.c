@@ -1,3 +1,4 @@
+//Calculator
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
@@ -26,7 +27,8 @@ int main()
 
 		bool opVal = false;
 		// Check op is fall under opOptions or not
-		// int i; // // (when loop initial declaration not allow)		for (int i = 0; i < sizeOfOp; i++)
+		// int i; // // (when loop initial declaration not allow)
+		for (int i = 0; i < sizeOfOp; i++)
 		{
 			if (op == operatorOption[i])
 			{

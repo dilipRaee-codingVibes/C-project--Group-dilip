@@ -1,6 +1,6 @@
-// TIC-TAC-TOE(player VS computer or friend VS friend)
+// TIC-TAC-TOE(player VS computer / friend VS friend)
 
-// Headers declaration
+// Including Headers files
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -48,7 +48,7 @@ void loadingStyle(int miliSec, char heading[])
     for (int i = 0; i < strlen(heading); i++)
     {
         printf("%c", heading[i]);
-        Beep(1000, 00);
+        Beep(1000, 700);
         Sleep(miliSec);
     }
     for (int i = 0; i < 7; i++)
@@ -96,12 +96,10 @@ int main()
 
         if (!userChoice)
         {
-            // printf("\n\n\t\tEnding game ");
             loadingStyle(100, "Ending game");
         }
         else
         {
-            // printf("\n\n\t\tstarting new game ");
             loadingStyle(100, "Starting new game");
         }
 

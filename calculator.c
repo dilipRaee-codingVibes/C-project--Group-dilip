@@ -15,9 +15,21 @@ static void clear_screen(void)
 #endif
 }
 
+//for styling result
+void loadingStyle(int miliSec, char expressions[])
+{
+	printf("\n\tRESULT :  ");
+	for (int i = 0; i < strlen(expressions); i++)
+	{
+		printf("%c", expressions[i]);
+		Sleep(miliSec);
+	}
+	printf("\n\n");
+}
+
 int main()
 {
-	char op, ch[10];
+	char op, ch[10], strResult[100];
 	float num1, num2, result;
 	char *userChoiceOption[] = {"yes", "y", "no", "n"};
 	char operatorOption[] = {'+', '-', '*', '/', '%'};
@@ -65,23 +77,27 @@ int main()
 		{
 		case '+':
 			result = num1 + num2;
-			printf("Result: %.2f + %.2f = %.2f\n", num1, num2, result);
+			sprintf(strResult, "%.2f + %.2f = %.2f", num1, num2, result);
+			loadingStyle(100, strResult);
 			break;
 		case '-':
 			result = num1 - num2;
-			printf("Result: %.2f - %.2f = %.2f\n", num1, num2, result);
+			sprintf(strResult, "%.2f - %.2f = %.2f", num1, num2, result);
+			loadingStyle(100, strResult);
 
 			break;
 		case '*':
 			result = num1 * num2;
-			printf("Result: %.2f x %.2f = %.2f\n", num1, num2, result);
+			sprintf(strResult, "%.2f x %.2f = %.2f", num1, num2, result);
+			loadingStyle(100, strResult);
 
 			break;
 		case '/':
 			if (num2 != 0)
 			{
 				result = num1 / num2;
-				printf("Result: %.2f / %.2f = %.2f\n", num1, num2, result);
+				sprintf(strResult, "%.2f / %.2f = %.2f", num1, num2, result);
+				loadingStyle(100, strResult);
 			}
 			else
 			{
@@ -94,8 +110,9 @@ int main()
 
 				int a = (int)num1;
 				int b = (int)num2;
-				int result = a % b;
-				printf("Result: %d %% %d = %d\n", a, b, result);
+				result = a % b;
+				sprintf(strResult, "%d % %.2f = %d", a, b, result);
+				loadingStyle(100, strResult);
 			}
 			else
 			{

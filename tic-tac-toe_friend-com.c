@@ -1,6 +1,6 @@
 // TIC-TAC-TOE(player VS computer / friend VS friend)
 
-// Including Headers files
+// Including headers files
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
@@ -9,7 +9,7 @@
 #include <windows.h>
 
 // Functions declaration
-static void render_board(void);           // to render
+static void render_board(void);            // to render
 static bool check_winner(char person);     // to check winner
 static bool is_draw(void);                 // to check draw
 bool make_move(int position, char person); // to moves
